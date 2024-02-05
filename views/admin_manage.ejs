@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Tutors</title>
+</head>
+<body>
+  <h1>Tutors List to be Approved</h1>
+  <table border="1">
+    <tr>
+      <th>ID</th>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Subject</th>
+      <th>Experience</th>
+      <th>Qualification</th>
+      <th>Availability</th>
+      <th>Action</th>
+    </tr>
+    <% tutors.forEach(tutor => { %>
+      <tr>
+        <td><%= tutor.id %></td>
+        <td><%= tutor.fullName %></td>
+        <td><%= tutor.email %></td>
+        <td><%= tutor.subject %></td>
+        <td><%= tutor.experience %></td>
+        <td><%= tutor.qualification %></td>
+        <td><%= tutor.availability %></td>
+        <td>
+          <form action="/approve/<%= tutor.id %>" method="post">
+            <input type="text" name="fullName" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Approve</button>
+          </form>
+        </td>
+      </tr>
+    <% }); %>
+  </table>
+
+  <button class="logout-button" onclick="logout()">Logout</button>
+    <!-- <button class="back-button" onclick="goBack()">Back</button> -->
+
+    <script>
+        function logout() {
+            // Add your logout logic here
+           // alert('Logout button clicked');
+           //window.location.href("index.ejs");
+           window.location.href="/";
+        }
+
+        function goBack() {
+            // Add your back button logic here
+            alert('Back button clicked');
+        }
+    </script>
+</body>
+</html>

@@ -1,19 +1,24 @@
 const mysql = require('mysql2');
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'office',
-    database: 'ISAP',
-  });
-  
-  // Connect to the database
-  connection.connect((err) => {
-    if (err) {
-      console.error('Error connecting to MySQL:', err);
-      return;
-    }
-    console.log('Connected to ISAP Database Successfully.');
-  });
+const fs = require('fs');
 
-  module.exports=connection;
+const conn = new mysql.createConnection({ 
+  host: "mysqlisapserver.mysql.database.azure.com", 
+  user: "isaproot", 
+  password: "1To3For5", 
+  database: "isapdb", 
+  port: 3306, 
+  ssl: { ca: fs.readFileSync("./config/DigiCertGlobalRootCA.crt.pem") }
+});
+
+conn.connect((err) => {
+  if (err) {
+    console.error('Error connecting to MySQL:', err);
+    return;
+  }
+  console.log('Connected to ISAP Database Successfully.');
+});
+
+
+
+ module.exports=conn;
   

@@ -44,13 +44,14 @@
   <div class="message-box">
     <h2>Registration Successful!</h2>
     <p>Hi <%= user_name %>, Thank you for registering. Your account has been created successfully.</p>
-    <button class="close-btn" onclick="closeMessageBox()">Sign In</button>
+    <button class="close-btn" onclick="redirectToIndex()">Sign In</button>
   </div>
 
   <script>
-    function closeMessageBox() {
-      document.querySelector('.message-box').style.display = 'none';
-    }
+    function redirectToIndex() {
+            // Redirect to the index.html page in the frontend folder
+            window.location.href = '/sign';
+        }
   </script>
 
 </body>
