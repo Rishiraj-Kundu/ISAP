@@ -139,16 +139,16 @@ app.post('/submit_quiz', (req, res) => {
 
   // Define the correct answers and corresponding marks
   const correctAnswers = {
-    q1: 'c',
-    q2: 'a',
-    q3: 'b',
+   q1: 'b',
+    q2: 'c',
+    q3: 'c',
     q4: 'c',
-    q5: 'b',
+    q5: 'c',
     q6: 'b',
-    q7: 'd',
-    q8: 'c',
-    q9: 'b',
-    q10: 'd',
+    q7: 'c',
+    q8: 'b',
+    q9: 'c',
+    q10: 'c',
   };
 
   let totalMarks = 0;
