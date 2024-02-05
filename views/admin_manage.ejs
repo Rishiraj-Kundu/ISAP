@@ -6,27 +6,28 @@
   <title>Display Tutors</title>
 </head>
 <body>
-  <h1>Tutors List to be Approved</h1>
-  <table border="1">
+  <h1 style="text-align: center;">Tutors List to be Approved</h1>
+  <div class="table" style="display: flex;  justify-content: center; align-items: center; flex-direction: column; row-gap: 10px;">
+  <table border="1" style="width:100px;">
     <tr>
-      <th>ID</th>
-      <th>Full Name</th>
-      <th>Email</th>
-      <th>Subject</th>
-      <th>Experience</th>
-      <th>Qualification</th>
-      <th>Availability</th>
-      <th>Action</th>
+      <th style="padding:10px">ID</th>
+      <th style="padding:10px">Full Name</th>
+      <th style="padding:10px">Email</th>
+      <th style="padding:10px">Subject</th>
+      <th style="padding:10px">Experience</th>
+      <th style="padding:10px" >Qualification</th>
+      <th style="padding:10px" >Availability</th>
+      <th style="padding:10px">Action</th>
     </tr>
     <% tutors.forEach(tutor => { %>
       <tr>
-        <td><%= tutor.id %></td>
-        <td><%= tutor.fullName %></td>
-        <td><%= tutor.email %></td>
-        <td><%= tutor.subject %></td>
-        <td><%= tutor.experience %></td>
-        <td><%= tutor.qualification %></td>
-        <td><%= tutor.availability %></td>
+        <td style="padding:10px"><%= tutor.id %></td>
+        <td style="padding:10px"><%= tutor.fullName %></td>
+        <td style="padding:10px"><%= tutor.email %></td>
+        <td style="padding:10px"><%= tutor.subject %></td>
+        <td style="padding:10px"><%= tutor.experience %></td>
+        <td style="padding:10px"><%= tutor.qualification %></td>
+        <td style="padding:10px"><%= tutor.availability %></td>
         <td>
           <form action="/approve/<%= tutor.id %>" method="post">
             <input type="text" name="fullName" placeholder="Full Name" required>
@@ -40,6 +41,7 @@
   </table>
 
   <button class="logout-button" onclick="logout()">Logout</button>
+</div>
     <!-- <button class="back-button" onclick="goBack()">Back</button> -->
 
     <script>
